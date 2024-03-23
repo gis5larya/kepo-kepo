@@ -64,6 +64,10 @@
   </style>
 </head>
 <body>
+  <audio id="background-music" preload="auto">
+    <source src="pp.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
   <div class="container">
     <h1>Pesan dan Kesan :</h1>
     <form id="messageForm">
@@ -143,6 +147,24 @@
         alert("ada yang eror nih.");
       });
     });
+           // Memulai pemutaran musik otomatis saat dokumen dimuat
+           document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-music');
+            if (audio) {
+                // Mengatur volume pemutaran audio menjadi 50%
+                audio.volume = 0.15; // Nilai volume berkisar dari 0 hingga 1
+                audio.play();
+            }
+        });
+                // Memulai pemutaran musik otomatis saat dokumen dimuat
+                document.addEventListener('DOMContentLoaded', function() {
+            playBackgroundMusic(); // Memanggil fungsi untuk memulai pemutaran musik
+        });
+
+        // Menjalankan kembali pemutaran musik setelah halaman diperbarui
+        window.addEventListener('load', function() {
+            playBackgroundMusic(); // Memanggil fungsi untuk memulai kembali pemutaran musik
+        });
   </script>
 
 </body>

@@ -21,8 +21,8 @@
     }
 
     .card {
-      width: 840px;
-      height: 600px;
+      width: 790px;
+      height: 550px;
       position: absolute;
       margin: auto;
       left: 0;
@@ -179,6 +179,10 @@
 </head>
 
 <body>
+<audio id="background-music" preload="auto">
+  <source src="pp.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
   <div class="card">
     <div class="outside">
       <div class="front">
@@ -193,7 +197,7 @@
       <div class="back"></div>
     </div>
     <div class="inside">
-      <p>Wishing you a very happy birthday filled with love and laughter</p>
+      <p>"Happy birthday! May your special day be filled with joy, laughter and precious moments." And what you want can be achieved quickly!</p>
       <h1>&#127873;</h1>
       <!-- Tombol "Lanjutkan" -->
       <button onclick="redirectToIndexz()">Lanjutkan</button>
@@ -204,7 +208,25 @@
     window.addEventListener('load', function() {
       document.querySelector('.card').classList.add('loaded');
     });
+       // Memulai pemutaran musik otomatis saat dokumen dimuat
+       document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-music');
+            if (audio) {
+                // Mengatur volume pemutaran audio menjadi 50%
+                audio.volume = 0.15; // Nilai volume berkisar dari 0 hingga 1
+                // Memulai pemutaran audio
+                audio.play();
+            }
+        });
+                // Memulai pemutaran musik otomatis saat dokumen dimuat
+                document.addEventListener('DOMContentLoaded', function() {
+            playBackgroundMusic(); // Memanggil fungsi untuk memulai pemutaran musik
+        });
 
+        // Menjalankan kembali pemutaran musik setelah halaman diperbarui
+        window.addEventListener('load', function() {
+            playBackgroundMusic(); // Memanggil fungsi untuk memulai kembali pemutaran musik
+        });
     // Fungsi untuk mengalihkan halaman ke indexz.html
     function redirectToIndexz() {
       window.location.href = "indexz.html";

@@ -120,9 +120,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Happy Birthday!</h1>
+        <h1>Happy Birthday !!</h1>
         <img src="local_birthday_image.jpg" alt="Ulang Tahun" style="width: 200px; margin-bottom: 20px;">
-        <p>Selamat ulang tahun yang ke-20! Semoga hari ini penuh dengan kebahagiaan dan keceriaan. Terima kasih telah menjadi bagian dari kehidupan kami.</p>
+        <p>"Happy birthday! May your special day be filled with joy, laughter and precious moments." And what you want can be achieved quickly!</p>
         <div class="signature">
             Created by <a href="https://www.instagram.com/gilar.yaa/" target="_blank">thomyy</a>
         </div>
@@ -275,6 +275,15 @@
                 // Memulai pemutaran audio
                 audio.play();
             }
+        });
+                // Memulai pemutaran musik otomatis saat dokumen dimuat
+                document.addEventListener('DOMContentLoaded', function() {
+            playBackgroundMusic(); // Memanggil fungsi untuk memulai pemutaran musik
+        });
+
+        // Menjalankan kembali pemutaran musik setelah halaman diperbarui
+        window.addEventListener('load', function() {
+            playBackgroundMusic(); // Memanggil fungsi untuk memulai kembali pemutaran musik
         });
 </script>
 </html>
