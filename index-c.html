@@ -197,7 +197,7 @@
       <div class="back"></div>
     </div>
     <div class="inside">
-      <p>"Happy birthday! May your special day be filled with joy, laughter and precious moments." And what you want can be achieved quickly!</p>
+      <p>"Happy birthday! May your special day be filled with joy, laughter and precious moments, And what you want can be achieved quickly!"</p>
       <h1>&#127873;</h1>
       <!-- Tombol "Lanjutkan" -->
       <button onclick="redirectToIndexz()">Lanjutkan</button>
@@ -218,6 +218,16 @@
                 audio.play();
             }
         });
+         // Fungsi untuk memulai kembali pemutaran musik
+         function playBackgroundMusic() {
+            var audio = document.getElementById('background-music');
+            if (audio) {
+                // Mengatur volume pemutaran audio menjadi 25%
+                audio.volume = 0.25; // Nilai volume berkisar dari 0 hingga 1
+                // Memulai pemutaran audio
+                audio.play();
+            }
+        }
                 // Memulai pemutaran musik otomatis saat dokumen dimuat
                 document.addEventListener('DOMContentLoaded', function() {
             playBackgroundMusic(); // Memanggil fungsi untuk memulai pemutaran musik

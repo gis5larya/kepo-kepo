@@ -121,8 +121,8 @@
 <body>
     <div class="container">
         <h1>Happy Birthday !!</h1>
-        <img src="local_birthday_image.jpg" alt="Ulang Tahun" style="width: 200px; margin-bottom: 20px;">
-        <p>"Happy birthday! May your special day be filled with joy, laughter and precious moments." And what you want can be achieved quickly!</p>
+        <img src="./gambar/file.png" alt="Ulang Tahun" style="width: 200px; margin-bottom: 20px;">
+        <p>"Happy birthday! May your special day be filled with joy, laughter and precious moments, And what you want can be achieved quickly!"</p>
         <div class="signature">
             Created by <a href="https://www.instagram.com/gilar.yaa/" target="_blank">thomyy</a>
         </div>
@@ -157,12 +157,10 @@
 <img class="balloon" src="./gambar/5.png" alt="Balon" style="left: 25%; top: 65%; width: 50px;">
 <!-- Balon 12 -->
 <img class="balloon" src="./gambar/5.png" alt="Balon" style="left: 75%; top: 75%; width: 80px;">
-
 <audio id="background-music" preload="auto">
     <source src="pp.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
-
 </body>
 <script>
     window.onload = function() {
@@ -266,8 +264,10 @@
         if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
         return M.join(' ');
     }
-       // Memulai pemutaran musik otomatis saat dokumen dimuat
-       document.addEventListener('DOMContentLoaded', function() {
+</script>
+<script>
+           // Memulai pemutaran musik otomatis saat dokumen dimuat
+           document.addEventListener('DOMContentLoaded', function() {
             var audio = document.getElementById('background-music');
             if (audio) {
                 // Mengatur volume pemutaran audio menjadi 50%
@@ -276,14 +276,47 @@
                 audio.play();
             }
         });
-                // Memulai pemutaran musik otomatis saat dokumen dimuat
-                document.addEventListener('DOMContentLoaded', function() {
-            playBackgroundMusic(); // Memanggil fungsi untuk memulai pemutaran musik
-        });
+        function playBackgroundMusic() {
+            var audio = document.getElementById('background-music');
+            if (audio) {
+                // Mengatur volume pemutaran audio menjadi 25%
+                audio.volume = 0.25;
+                // Memulai pemutaran audio
+                audio.play();
+                // Hapus event listener setelah pemutaran musik dimulai
+                document.removeEventListener('mousemove', showNotification);
+                // Menghapus notifikasi
+                var notification = document.querySelector('.notification');
+                if (notification) {
+                    notification.style.display = 'none';
+                }
+            }
+        }
 
-        // Menjalankan kembali pemutaran musik setelah halaman diperbarui
-        window.addEventListener('load', function() {
-            playBackgroundMusic(); // Memanggil fungsi untuk memulai kembali pemutaran musik
-        });
+        function showNotification() {
+            // Menampilkan notifikasi sekali saat mouse digerakkan
+            var notification = document.querySelector('.notification');
+            if (notification) {
+                notification.style.display = 'block';
+                // Hapus notifikasi setelah 5 detik
+                setTimeout(function() {
+                    notification.style.display = 'none';
+                }, 5000);
+            }
+            // Tambahkan event listener untuk memulai pemutaran musik setelah klik
+            document.addEventListener('click', playBackgroundMusic);
+            // Hapus notifikasi saat pengguna mengklik di mana saja di halaman
+            document.addEventListener('click', function() {
+                if (notification) {
+                    notification.style.display = 'none';
+                }
+            });
+        }
+
+        // Mendeteksi gerakan mouse untuk menampilkan notifikasi
+        document.addEventListener('mousemove', showNotification);
 </script>
+<div class="notification" style="display: none; position: fixed; top: 20px; left: 20px; background-color: #fff; padding: 10px; border: 1px solid #000; border-radius: 5px;">
+    Klik dulu dong KAK!!
+</div>
 </html>
