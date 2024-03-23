@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./gambar/1.png">
-    <title>larya-awal</title>
+    <title>awalan-larya</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -158,6 +158,11 @@
 <!-- Balon 12 -->
 <img class="balloon" src="./gambar/5.png" alt="Balon" style="left: 75%; top: 75%; width: 80px;">
 
+<audio id="background-music" preload="auto">
+    <source src="pp.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
 </body>
 <script>
     window.onload = function() {
@@ -261,5 +266,15 @@
         if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
         return M.join(' ');
     }
+       // Memulai pemutaran musik otomatis saat dokumen dimuat
+       document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-music');
+            if (audio) {
+                // Mengatur volume pemutaran audio menjadi 50%
+                audio.volume = 0.15; // Nilai volume berkisar dari 0 hingga 1
+                // Memulai pemutaran audio
+                audio.play();
+            }
+        });
 </script>
 </html>
